@@ -1,0 +1,491 @@
+.lesson {
+  position: relative;
+  min-height: 100vh;
+  user-select: none;
+
+ &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 5rem;
+    width: 100%;
+    background-color: $c-block-bg;
+    z-index: 2;
+  }
+}
+
+.lesson-top {
+  display: flex;
+  justify-content: space-between;
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 0 8rem;
+    
+  @include desktop-small {
+    padding: 0 5rem;
+  }
+  
+  @include mobile {
+    padding: 0 1.6rem;
+  }
+}
+
+.lesson-settings {
+  height: 5rem;
+  display: flex; 
+  column-gap: 4rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+
+  @include mobile {
+    column-gap: 1rem;
+  }
+}
+
+.lesson-ribbon {
+  @include font-subtitle-mobile;
+  position: absolute;
+  padding: 0 3rem;
+  line-height: 5rem;
+  background-color: $c-accent;
+  color: $c-white;
+  top: 5rem;
+  text-align: center;
+  border-radius: 0 0 $small-border-radius $small-border-radius;
+  transition: $transition-time;
+  left: 50%;
+  transform: translate(-50%, 0);
+  white-space: nowrap;
+  z-index: 1;
+  
+  @include tablet {
+    @include font-main;
+    line-height: 4rem;
+  }
+}
+
+.lesson-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 110rem;
+  margin: 10rem auto 0;
+  padding: 0 8rem;
+  
+  @include desktop-small {
+    padding: 0 5rem;
+  }
+
+  @include tablet {
+    margin: 5rem auto 0;
+  }
+  
+  @include mobile {
+    padding: 0 1.6rem;
+  }
+}
+
+.lesson-font-btn {
+  height: 4rem;
+  width: 4rem;
+  background: $bg-lesson-font no-repeat center;
+
+  &:hover {
+    background: $bg-lesson-font-hover no-repeat center;
+  }
+}
+
+.lesson-sound-btn {
+  height: 4rem;
+  width: 4rem;
+  background: $bg-lesson-sound no-repeat center;
+
+  &:hover {
+    background: $bg-lesson-sound-hover no-repeat center;
+  }
+}
+
+.lesson-skin-btn {
+  height: 4rem;
+  width: 4rem;
+  background: $bg-lesson-skin no-repeat center;
+
+  &:hover {
+    background: $bg-lesson-skin-hover no-repeat center;
+  }
+}
+
+.lesson-bg-btn {
+  height: 4rem;
+  width: 4rem;
+  background: $bg-lesson-bg no-repeat center;
+
+  &:hover {
+    background: $bg-lesson-bg-hover no-repeat center;
+  }
+}
+
+.content-top-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+
+  &::after {
+    content: ''; 
+    position: absolute;
+    width: 100%;
+    height: 0.2rem;
+    bottom: -1rem;
+    border-radius: $small-border-radius;
+    background-color: $c-accent;
+  }
+
+  @include tablet {
+    height: 9rem;
+  }
+}
+
+.lesson-stats {
+  @include font-subtitle-mobile;
+  display: flex;
+  column-gap: 4rem;
+  color: $c-menu-inactive-link;
+
+  @include tablet {
+    @include font-main;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.lesson-restart-btn {
+  height: 4rem;
+  width: 4rem;
+  background: $bg-lesson-restart no-repeat center;
+
+  &:hover {
+    background: $bg-lesson-restart-hover no-repeat center;
+  }
+}
+
+.lesson-mistakes-wrapper {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.lesson-wpm-wrapper,
+.lesson-corrections-wrapper,
+.lesson-accuracy-wrapper {
+  display: flex;
+  column-gap: 1rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0.2rem;
+    height: 100%;
+    border-radius: $small-border-radius;
+    background-color: $c-accent;
+    top: 0;
+    left: -2rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.lesson-input {
+  width: 0;
+}
+
+.lesson-content {
+  @include font-subtitle;
+  color: $c-main-text;
+  letter-spacing: 0.4rem;
+  word-spacing: 0.4rem;
+  height: 24rem;
+  overflow: hidden;
+  line-height: 4rem;
+}
+
+.lesson-char {
+  padding: 0.2rem 0 0.2rem 0.3rem;
+  margin: 0 0.1rem;
+}
+
+.lesson-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 6rem;
+  background-color: $c-body-bg;
+  border-radius: $big-border-radius;
+  box-shadow: $bxs-result-shadow;
+  width: 37rem;
+
+  @include tablet {
+    top: 22rem;
+    padding: 3.5rem 5rem;
+    width: 35rem;
+  }
+
+  @include mobile {
+    width: 28rem;
+    padding: 2rem 2rem;
+  }
+}
+
+.lesson-result-title {
+  @include font-subtitle-mobile;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: $c-accent;
+  line-height: 2.2rem;
+}
+
+.lesson-result-req {
+  @include font-main;
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+}
+
+
+.lesson-score {
+  display: flex;
+  color: $c-main-text;
+  column-gap: 0.4rem;
+}
+
+.lesson-result-score-text {
+  color: $c-accent;
+}
+
+.lesson-result-accuracy-wrapper,
+.lesson-result-speed-wrapper,
+.lesson-result-speed-star-wrapper,
+.lesson-score-wrapper {
+  @include font-main;
+  display: flex;
+  justify-content: space-between;
+  width: 25rem;
+}
+
+.lesson-result-req,
+.lesson-result-accuracy-wrapper,
+.lesson-result-speed-wrapper,
+.lesson-result-speed-star-wrapper {
+  color: $c-main-text;
+}
+
+.lesson-result-accuracy-wrapper,
+.lesson-result-speed-wrapper {
+  margin-top: 0.4rem;
+}
+
+.lesson-badges-wrapper {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+  row-gap: 1rem;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+  @include mobile {
+    top: -20rem;
+  }
+}
+
+.lesson-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+  max-width: min-content;
+  padding: 1rem;
+  background-color: $c-body-bg;
+  border-radius: $small-border-radius;
+  box-shadow: $bxs-result-shadow;
+}
+
+.lesson-badge-img {
+  width: 8rem;
+  height: 8rem;
+}
+
+.lesson-badge-text {
+  @include font-main-small;
+  display: flex;
+  flex-direction: column;
+  max-width: 17rem;
+  min-width: 15rem;
+  row-gap: 1rem;
+}
+
+.lesson-badge-title {
+  color: $c-accent;
+}
+
+.lesson-badge-content {
+  color: $c-main-text;
+}
+
+.lesson-hands {
+  position: absolute;
+  top: 52.6rem;
+  z-index: 10;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  @include tablet-stats {
+    display: none;
+  }
+}
+
+.intro-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 19;
+  background: $c-bg-modal-overlay;
+}
+
+.lesson-intro {
+  background-color: $c-body-bg;
+  border-radius: $big-border-radius;
+  padding: 4rem 5rem;
+  position: fixed;
+  z-index: 20;
+  width: 70%;
+  max-width: 60rem;
+  height: 50rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mobile {
+    padding: 4rem 2rem;
+    width: 90%;
+  }
+}
+
+.intro-img {
+  height: 26rem;
+}
+
+.intro-btns-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.intro-text {
+  @include font-subtitle-mobile;
+  color: $c-main-text;
+  text-align: center;
+}
+
+.intro-skip-btn,
+.intro-next-btn {
+  @include font-main;
+  width: 12rem;
+  height: 4rem;
+  border: 0.2rem solid $c-accent;
+  border-radius: $small-border-radius;
+}
+
+.intro-skip-btn {
+  color: $c-accent;
+}
+
+.intro-next-btn {
+  color: $c-white;
+  background-color: $c-accent;
+}
+
+.intro-text-key {
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  color: $c-white;
+  background-color: $c-accent;
+  margin: 0 1rem;
+  line-height: 4rem;
+  border-radius: $small-border-radius;
+}
+
+.intro-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+  margin-top: auto;
+  margin-bottom: 14rem; 
+}
+
+.intro-text-accent {
+  @include font-title-mobile;
+  color: $c-accent;
+}
+
+.lesson-next-btn {
+  @include font-main;
+  width: 16rem;
+  height: 4rem;
+  background-color: $c-accent;
+  border-radius: $small-border-radius;
+  color: $c-white;
+}
+
+.lesson-result-wrapper {
+  position: absolute;
+  top: 22rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;  
+  z-index: 20;
+}
+
+.progress-bar-wrapper {
+  max-width: 110rem;
+  margin: 0 auto 5.4rem;
+  height: 0.4rem;
+  padding: 0 8rem;
+
+  @include desktop-small {
+    padding: 0 5rem;
+  }
+
+  @include mobile {
+    padding: 0 1.6rem;
+  }
+}
+
+.progress-bar-all {
+  height: 100%;
+  width: 100%;
+  border-radius: $small-border-radius;
+  background-color: $c-block-bg;
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar-done {
+  height: 0.2rem;
+  width: 0%;
+  border-radius: $small-border-radius;
+  background-color: $c-accent;
+  margin: 0 0.1rem;
+}

@@ -1,0 +1,210 @@
+@mixin interaction-effects {
+  cursor: pointer;
+  transition: $transition-time;
+
+  &:disabled {
+    cursor: auto;
+  }
+}
+
+@mixin accessibility-text {
+  font-size: 0;
+}
+
+@mixin desktop-small {
+  @media (max-width: $desktop-small-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin tablet-small {
+  @media (max-width: $tablet-small-width) {
+    @content;
+  }
+}
+
+@mixin tablet-stats {
+  @media (max-width: $tablet-stats-width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin mobile-badges {
+  @media (max-width: $mobile-badges-width) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media (max-width: $mobile-small-width) {
+    @content;
+  }
+}
+
+@mixin mobile-small-badges {
+  @media (max-width: $mobile-small-badges-width) {
+    @content;
+  }
+}
+
+@mixin big-btn {
+  width: 24rem;
+  height: 5rem;
+  border-radius: $small-border-radius;
+
+  font-size: 2rem;
+  font-weight: $fw-bold;
+
+  color: white;
+  background-color: $c-accent;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $c-big-btn-hover;
+  }
+
+  &:active {
+    background-color: $c-big-btn-active;
+  }
+
+  &:disabled {
+    background-color: $c-big-btn-disabled;
+  }
+
+  @include mobile {
+    font-size: 1.8rem;
+  }
+}
+
+@mixin small-btn-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin font-main {
+  font-size: 1.6rem;
+  font-weight: $fw-regular;
+}
+
+@mixin font-main-small {
+  font-size: 1.4rem;
+}
+
+@mixin font-title-promo {
+  font-size: 4rem;
+  font-weight: $fw-extrabold;
+}
+
+@mixin font-title-promo-mobile {
+  font-size: 3.2rem;
+  font-weight: $fw-extrabold;
+}
+
+@mixin font-title {
+  font-size: 3.2rem;
+  font-weight: $fw-bold;
+}
+
+@mixin font-subtitle {
+  font-size: 2.4rem;
+  font-weight: $fw-regular;
+}
+
+@mixin font-title-mobile {
+  font-size: 2.4rem;
+  font-weight: $fw-bold;
+}
+
+@mixin font-subtitle-mobile {
+  font-size: 2rem;
+}
+
+@mixin font-keyboard-function {
+  font-size: 1.2rem;
+}
+
+@mixin default-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+@mixin default-modal {
+  position: absolute;
+  background-color: $c-body-bg;
+  box-shadow: $bxs-modal-shadow;
+}
+
+@mixin default-input {
+  @include font-main;
+  display: block;
+  height: 4rem;
+  color: $c-main-text;
+  padding: 1rem;
+  border: 0.1rem solid $c-accent;
+  border-radius: $small-border-radius;
+
+  &:disabled {
+    border-color: transparent;
+    background-color: $c-block-bg;
+  }
+}
+
+@mixin password-input {
+  padding-right: 4rem;
+}
+
+@mixin default-avatar {
+  width: 100%;
+  border-radius: 50%;
+}
+
+@mixin avatar-wrapper {
+  width: 15rem;
+  height: 15rem;
+}
+
+@mixin bubble-modal-bg {
+  background-color: $c-block-bg;
+  border-radius: $big-border-radius;
+  box-shadow: $bxs-modal-shadow;
+}
+
+@mixin about-desc {
+  @include font-main;
+  width: 100%;
+  color: $c-main-text;
+  background-color: $c-block-bg;
+  border-radius: $big-border-radius;
+  margin-bottom: 2rem;
+}
+
+@mixin confirmation-content {
+  @include bubble-modal-bg;
+  @include font-main;
+  position: absolute;
+  width: 28rem;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  z-index: 2;
+}
+
+@mixin confirmation-btn {
+  @include interaction-effects;
+  width: 6.6rem;
+  padding: 0.2rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.6rem;
+}

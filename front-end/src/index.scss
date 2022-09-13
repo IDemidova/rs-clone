@@ -1,0 +1,29 @@
+// Common
+@import './styles/common/fonts.scss';
+@import './styles/common/variables.scss';
+@import './styles/common/mixins.scss';
+@import './styles/common/themes.scss';
+@import './styles/common/reset.scss';
+@import './styles/common/default.scss';
+
+// Layout
+@import './styles/blocks/header.scss';
+@import './styles/blocks/footer.scss';
+@import './styles/blocks/home.scss';
+@import './styles/blocks/lessons-layout.scss';
+@import './styles/blocks/games.scss';
+@import './styles/blocks/lessons.scss';
+@import './styles/blocks/error.scss';
+@import './styles/blocks/registration.scss';
+@import './styles/blocks/profile.scss';
+@import './styles/blocks/lesson.scss';
+@import './styles/blocks/test.scss';
+@import './styles/blocks/keyboard.scss';
+@import './styles/blocks/confirmation.scss';
+@import './styles/blocks/burger-menu.scss';
+@import './styles/blocks/about.scss';
+@import './styles/blocks/customization.scss';
+
+// Games
+@import './games/typing-adventure/typing-adventure.scss';
+@import './games/typing-hero/typing-hero.scss';

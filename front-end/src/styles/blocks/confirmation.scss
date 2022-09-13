@@ -1,0 +1,61 @@
+.confirmation-question {
+  color: $c-accent;
+  margin-bottom: 0.5rem;
+}
+
+.confirmation-text {
+  color: $c-main-text;
+  margin-bottom: 1.5rem;
+}
+
+.confirmation-btns-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.confirmation-yes-btn {
+  @include confirmation-btn;
+  color: $c-confirmation-yes-text;
+  background-color: $c-accent;
+}
+
+.confirmation-no-btn {
+  @include confirmation-btn;
+  color: $c-accent;
+  border-color: $c-accent;
+}
+
+.logout-confirmation-wrapper {
+  position: relative;
+}
+
+.logout-confirmation-content {
+  @include confirmation-content;
+  left: 50%;
+  bottom: 6rem;
+  transform: translateX(-50%);
+}
+
+.delete-account-confirmation-wrapper {
+  position: absolute;
+  bottom: calc((5rem - 2.1rem) / 2);
+
+  @include tablet-small {
+    position: static;
+    display: block;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}
+
+.delete-account-confirmation-content {
+  @include confirmation-content;
+  bottom: calc((5rem - 2.1rem) / 2 + 2rem);
+
+  @include tablet-small {
+    bottom: 11.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

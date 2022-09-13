@@ -1,0 +1,99 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  max-width: 110rem;
+  padding: 0 8rem;
+  margin: 0 auto 4rem;
+
+  @include desktop-small {
+    padding: 0 5rem;
+  }
+
+  @include mobile {
+    padding: 0 1.6rem;
+  }
+}
+
+.layout-en-bg{
+  background: $bg-lessons-en no-repeat right / contain;
+
+  @include tablet {
+    background-position: center center;
+  }
+}
+
+.layout-ru-bg{
+  background: $bg-lessons-ru no-repeat right / contain;
+
+  @include tablet {
+    background-position: center center;
+  }
+}
+
+.layout-test {
+  display: flex;
+  padding: 3rem 5rem;
+  background-color: $c-block-bg;
+  border-radius: $big-border-radius;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 2rem;
+
+  @include tablet {
+    padding: 3rem 2rem;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+}
+
+.layout-fact {
+  display: flex;
+  background-color: $c-block-bg;
+  border-radius: $big-border-radius;
+  padding: 5rem 5rem 5rem 15rem;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: $bg-lessons-fact no-repeat left / contain;
+    width: 15rem;
+    height: 15rem;
+    left: 0;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    padding: 12rem 2rem 2rem;
+
+    &::before {
+      width: 10rem;
+      height: 10rem;
+      top: 0;
+      display: inline-block;
+      left: calc(50% - 5rem);
+      top: 1rem;
+    }
+  }
+}
+
+.section-btns-wrapper {
+  max-width: 110rem;
+  display: flex;
+  column-gap: 8rem;
+
+  @include desktop-small {
+    column-gap: 5rem;
+  }
+
+  @include tablet {
+    column-gap: 3rem;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+}
